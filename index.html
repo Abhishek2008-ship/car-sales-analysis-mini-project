@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarTrend Analytics - Explore. Compare. Understand the Automobile Market.</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="bi bi-car-front-fill"></i> CarTrend Analytics
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#market-overview">Market Trends</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#brand-analysis">Brand Analysis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#car-explorer">Car Explorer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#insights">Insights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn ms-2" id="themeToggle">
+                            <i class="bi bi-sun"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="hero-content">
+                        <h1>Explore the Evolution of the Automobile Market</h1>
+                        <p>Analyze car prices, brands, fuel types, performance and market trends using interactive data visualization.</p>
+                        <div class="hero-buttons">
+                            <a href="#market-overview" class="btn btn-primary btn-lg">Explore Dashboard</a>
+                            <a href="#car-explorer" class="btn btn-outline-light btn-lg">View Car Data</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="hero-visual">
+                        <i class="bi bi-car-front-fill"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KPI Statistics Section -->
+    <section class="kpi-section py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4 col-lg-2">
+                    <div class="kpi-card">
+                        <div class="kpi-icon orange">
+                            <i class="bi bi-car-front"></i>
+                        </div>
+                        <div class="kpi-value" id="totalCars">0</div>
+                        <div class="kpi-label">Total Cars</div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <div class="kpi-card">
+                        <div class="kpi-icon gold">
+                            <i class="bi bi-buildings"></i>
+                        </div>
+                        <div class="kpi-value" id="totalBrands">0</div>
+                        <div class="kpi-label">Total Brands</div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <div class="kpi-card">
+                        <div class="kpi-icon red">
+                            <i class="bi bi-currency-dollar"></i>
+                        </div>
+                        <div class="kpi-value" id="avgPrice">₹0</div>
+                        <div class="kpi-label">Avg Price</div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <div class="kpi-card">
+                        <div class="kpi-icon teal">
+                            <i class="bi bi-speedometer2"></i>
+                        </div>
+                        <div class="kpi-value" id="avgMileage">0</div>
+                        <div class="kpi-label">Avg Mileage</div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <div class="kpi-card">
+                        <div class="kpi-icon graphite">
+                            <i class="bi bi-gear"></i>
+                        </div>
+                        <div class="kpi-value" id="avgEngine">0</div>
+                        <div class="kpi-label">Avg Engine (CC)</div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <div class="kpi-card">
+                        <div class="kpi-icon orange">
+                            <i class="bi bi-lightning-charge"></i>
+                        </div>
+                        <div class="kpi-value" id="avgPower">0</div>
+                        <div class="kpi-label">Avg Power (BHP)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Panel -->
+    <section class="filter-section py-4">
+        <div class="container">
+            <div class="filter-panel">
+                <div class="filter-header">
+                    <h5><i class="bi bi-funnel"></i> Advanced Filters</h5>
+                    <button class="btn btn-sm btn-outline-danger" id="resetFilters">
+                        <i class="bi bi-x-circle"></i> Reset All
+                    </button>
+                </div>
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <label class="form-label">Brand</label>
+                        <select class="form-select" id="filterBrand" multiple>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">Fuel Type</label>
+                        <select class="form-select" id="filterFuel" multiple>
+                            <option value="Petrol">Petrol</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="Electric">Electric</option>
+                            <option value="Hybrid">Hybrid</option>
+                            <option value="CNG">CNG</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">Transmission</label>
+                        <select class="form-select" id="filterTransmission" multiple>
+                            <option value="Manual">Manual</option>
+                            <option value="Automatic">Automatic</option>
+                            <option value="AMT">AMT</option>
+                            <option value="CVT">CVT</option>
+                            <option value="DCT">DCT</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">Body Type</label>
+                        <select class="form-select" id="filterBodyType" multiple>
+                            <option value="Hatchback">Hatchback</option>
+                            <option value="Sedan">Sedan</option>
+                            <option value="SUV">SUV</option>
+                            <option value="Coupe">Coupe</option>
+                            <option value="Convertible">Convertible</option>
+                            <option value="MPV">MPV</option>
+                            <option value="Pickup">Pickup</option>
+                            <option value="Wagon">Wagon</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Min Price (₹)</label>
+                        <input type="number" class="form-control" id="filterMinPrice" placeholder="Min">
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Max Price (₹)</label>
+                        <input type="number" class="form-control" id="filterMaxPrice" placeholder="Max">
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Min Year</label>
+                        <input type="number" class="form-control" id="filterMinYear" placeholder="Min">
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Max Year</label>
+                        <input type="number" class="form-control" id="filterMaxYear" placeholder="Max">
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Min Mileage</label>
+                        <input type="number" class="form-control" id="filterMinMileage" placeholder="Min">
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Max Mileage</label>
+                        <input type="number" class="form-control" id="filterMaxMileage" placeholder="Max">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Overview Section -->
+    <section id="market-overview" class="market-overview py-5">
+        <div class="container">
+            <h2 class="section-title">Market Overview</h2>
+            <p class="section-subtitle">Comprehensive analysis of the automobile market trends</p>
+            
+            <div class="row g-4">
+                <!-- Cars by Brand Chart -->
+                <div class="col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Cars by Brand</h5>
+                            <div class="chart-controls">
+                                <select class="form-select form-select-sm" id="brandSort">
+                                    <option value="highest">Highest First</option>
+                                    <option value="lowest">Lowest First</option>
+                                    <option value="alphabetical">Alphabetical</option>
+                                </select>
+                            </div>
+                        </div>
+                        <canvas id="brandChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Average Price by Brand Chart -->
+                <div class="col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Average Price by Brand</h5>
+                            <div class="chart-controls">
+                                <select class="form-select form-select-sm" id="priceBrandSelect">
+                                    <option value="10">Top 10</option>
+                                    <option value="20">Top 20</option>
+                                    <option value="all">All Brands</option>
+                                </select>
+                            </div>
+                        </div>
+                        <canvas id="priceBrandChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Fuel Type Distribution -->
+                <div class="col-lg-4">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Fuel Type Distribution</h5>
+                        </div>
+                        <canvas id="fuelChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Transmission Distribution -->
+                <div class="col-lg-4">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Transmission Distribution</h5>
+                        </div>
+                        <canvas id="transmissionChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Cars by Year -->
+                <div class="col-lg-4">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Cars by Manufacturing Year</h5>
+                        </div>
+                        <canvas id="yearChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Average Price by Year -->
+                <div class="col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Average Price by Year</h5>
+                        </div>
+                        <canvas id="priceYearChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Body Type Distribution -->
+                <div class="col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Body Type Distribution</h5>
+                        </div>
+                        <canvas id="bodyTypeChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Analysis Section -->
+    <section id="brand-analysis" class="brand-analysis py-5">
+        <div class="container">
+            <h2 class="section-title">Brand Intelligence</h2>
+            <p class="section-subtitle">Detailed analysis of individual car manufacturers</p>
+            
+            <div class="brand-selector mb-4">
+                <label class="form-label">Select Brand to Analyze:</label>
+                <select class="form-select" id="brandAnalysisSelect">
+                    <option value="">Choose a brand...</option>
+                </select>
+            </div>
+
+            <div class="row g-4" id="brandAnalysisContent" style="display: none;">
+                <!-- Brand Statistics -->
+                <div class="col-lg-8">
+                    <div class="brand-stats-card">
+                        <h4 id="selectedBrandName">Brand Statistics</h4>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="stat-item">
+                                    <span class="stat-label">Number of Cars</span>
+                                    <span class="stat-value" id="brandCarCount">0</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="stat-item">
+                                    <span class="stat-label">Average Price</span>
+                                    <span class="stat-value" id="brandAvgPrice">₹0</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="stat-item">
+                                    <span class="stat-label">Min Price</span>
+                                    <span class="stat-value" id="brandMinPrice">₹0</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="stat-item">
+                                    <span class="stat-label">Max Price</span>
+                                    <span class="stat-value" id="brandMaxPrice">₹0</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="stat-item">
+                                    <span class="stat-label">Average Mileage</span>
+                                    <span class="stat-value" id="brandAvgMileage">0</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="stat-item">
+                                    <span class="stat-label">Average Engine</span>
+                                    <span class="stat-value" id="brandAvgEngine">0 CC</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="stat-item">
+                                    <span class="stat-label">Average Power</span>
+                                    <span class="stat-value" id="brandAvgPower">0 BHP</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="stat-item">
+                                    <span class="stat-label">Most Common Fuel</span>
+                                    <span class="stat-value" id="brandCommonFuel">-</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="stat-item">
+                                    <span class="stat-label">Most Common Body</span>
+                                    <span class="stat-value" id="brandCommonBody">-</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="stat-item">
+                                    <span class="stat-label">Most Common Transmission</span>
+                                    <span class="stat-value" id="brandCommonTransmission">-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brand Charts -->
+                <div class="col-lg-4">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Fuel Type Distribution</h5>
+                        </div>
+                        <canvas id="brandFuelChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Body Type Distribution</h5>
+                        </div>
+                        <canvas id="brandBodyChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Transmission Distribution</h5>
+                        </div>
+                        <canvas id="brandTransmissionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Comparison Section -->
+    <section class="brand-comparison py-5">
+        <div class="container">
+            <h2 class="section-title">Brand Comparison</h2>
+            <p class="section-subtitle">Compare multiple car manufacturers side by side</p>
+            
+            <div class="comparison-selector mb-4">
+                <label class="form-label">Select Brands to Compare (2-4):</label>
+                <select class="form-select" id="comparisonBrands" multiple>
+                </select>
+            </div>
+            <button class="btn btn-primary" id="compareBrandsBtn">Compare Brands</button>
+
+            <div class="comparison-content mt-4" id="comparisonContent" style="display: none;">
+                <div class="comparison-table">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th id="compBrand1">Brand 1</th>
+                                <th id="compBrand2">Brand 2</th>
+                                <th id="compBrand3">Brand 3</th>
+                                <th id="compBrand4">Brand 4</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Average Price</td>
+                                <td id="compPrice1">-</td>
+                                <td id="compPrice2">-</td>
+                                <td id="compPrice3">-</td>
+                                <td id="compPrice4">-</td>
+                            </tr>
+                            <tr>
+                                <td>Average Mileage</td>
+                                <td id="compMileage1">-</td>
+                                <td id="compMileage2">-</td>
+                                <td id="compMileage3">-</td>
+                                <td id="compMileage4">-</td>
+                            </tr>
+                            <tr>
+                                <td>Average Power</td>
+                                <td id="compPower1">-</td>
+                                <td id="compPower2">-</td>
+                                <td id="compPower3">-</td>
+                                <td id="compPower4">-</td>
+                            </tr>
+                            <tr>
+                                <td>Average Engine</td>
+                                <td id="compEngine1">-</td>
+                                <td id="compEngine2">-</td>
+                                <td id="compEngine3">-</td>
+                                <td id="compEngine4">-</td>
+                            </tr>
+                            <tr>
+                                <td>Number of Models</td>
+                                <td id="compModels1">-</td>
+                                <td id="compModels2">-</td>
+                                <td id="compModels3">-</td>
+                                <td id="compModels4">-</td>
+                            </tr>
+                            <tr>
+                                <td>Most Popular Fuel</td>
+                                <td id="compFuel1">-</td>
+                                <td id="compFuel2">-</td>
+                                <td id="compFuel3">-</td>
+                                <td id="compFuel4">-</td>
+                            </tr>
+                            <tr>
+                                <td>Most Popular Transmission</td>
+                                <td id="compTrans1">-</td>
+                                <td id="compTrans2">-</td>
+                                <td id="compTrans3">-</td>
+                                <td id="compTrans4">-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="row g-4 mt-3">
+                    <div class="col-lg-6">
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h5>Price Comparison</h5>
+                            </div>
+                            <canvas id="comparisonPriceChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h5>Power Comparison</h5>
+                            </div>
+                            <canvas id="comparisonPowerChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Analysis Section -->
+    <section class="price-analysis py-5">
+        <div class="container">
+            <h2 class="section-title">Price Analysis</h2>
+            <p class="section-subtitle">Understanding pricing patterns across different categories</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Price Distribution</h5>
+                        </div>
+                        <canvas id="priceDistributionChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Price by Fuel Type</h5>
+                        </div>
+                        <canvas id="priceFuelChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Price by Body Type</h5>
+                        </div>
+                        <canvas id="priceBodyChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Price vs Power</h5>
+                        </div>
+                        <canvas id="pricePowerChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Price vs Engine Capacity</h5>
+                        </div>
+                        <canvas id="priceEngineChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fuel Type Analysis Section -->
+    <section class="fuel-analysis py-5">
+        <div class="container">
+            <h2 class="section-title">Fuel Trends</h2>
+            <p class="section-subtitle">Analyzing fuel type preferences and patterns</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Fuel Type Statistics</h5>
+                        </div>
+                        <div class="fuel-stats" id="fuelStats">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Year-wise Fuel Trend</h5>
+                        </div>
+                        <canvas id="fuelYearChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Electric Vehicle Analysis Section -->
+    <section class="ev-analysis py-5">
+        <div class="container">
+            <h2 class="section-title">Electric Vehicle Analysis</h2>
+            <p class="section-subtitle">Growth and trends in electric vehicles</p>
+            
+            <div class="row g-4" id="evContent">
+                <div class="col-lg-3">
+                    <div class="kpi-card">
+                        <div class="kpi-icon">
+                            <i class="bi bi-lightning-charge"></i>
+                        </div>
+                        <div class="kpi-value" id="evCount">0</div>
+                        <div class="kpi-label">Total EVs</div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="kpi-card">
+                        <div class="kpi-icon">
+                            <i class="bi bi-currency-dollar"></i>
+                        </div>
+                        <div class="kpi-value" id="evAvgPrice">₹0</div>
+                        <div class="kpi-label">Avg EV Price</div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="kpi-card">
+                        <div class="kpi-icon">
+                            <i class="bi bi-lightning-charge"></i>
+                        </div>
+                        <div class="kpi-value" id="evAvgPower">0</div>
+                        <div class="kpi-label">Avg EV Power</div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="kpi-card">
+                        <div class="kpi-icon">
+                            <i class="bi bi-buildings"></i>
+                        </div>
+                        <div class="kpi-value" id="evBrands">0</div>
+                        <div class="kpi-label">EV Brands</div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Growth of Electric Vehicles Over the Years</h5>
+                        </div>
+                        <canvas id="evGrowthChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>EV Brand Distribution</h5>
+                        </div>
+                        <canvas id="evBrandChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Analysis Section -->
+    <section class="performance-analysis py-5">
+        <div class="container">
+            <h2 class="section-title">Performance Analytics</h2>
+            <p class="section-subtitle">Engine capacity, horsepower, and performance trends</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Engine vs Power</h5>
+                        </div>
+                        <canvas id="enginePowerChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Power vs Price</h5>
+                        </div>
+                        <canvas id="powerPriceChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Engine vs Price</h5>
+                        </div>
+                        <canvas id="enginePriceChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Mileage by Fuel Type</h5>
+                        </div>
+                        <canvas id="mileageFuelChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="performance-insights">
+                        <h5>Performance Insights</h5>
+                        <div id="performanceInsightsContent">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Body Type Analysis Section -->
+    <section class="body-analysis py-5">
+        <div class="container">
+            <h2 class="section-title">Body Type Analysis</h2>
+            <p class="section-subtitle">Popularity and characteristics of different vehicle styles</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Body Type Popularity</h5>
+                        </div>
+                        <canvas id="bodyPopularityChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Average Price by Body Type</h5>
+                        </div>
+                        <canvas id="bodyPriceChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Average Mileage by Body Type</h5>
+                        </div>
+                        <canvas id="bodyMileageChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Average Power by Body Type</h5>
+                        </div>
+                        <canvas id="bodyPowerChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Year-wise Trend Analysis Section -->
+    <section class="year-trend py-5">
+        <div class="container">
+            <h2 class="section-title">Year-wise Trend Analysis</h2>
+            <p class="section-subtitle">Automobile market evolution over time</p>
+            
+            <div class="year-filter mb-4">
+                <label class="form-label">Select Year Range:</label>
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <input type="number" class="form-control" id="yearRangeMin" placeholder="Min Year">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" class="form-control" id="yearRangeMax" placeholder="Max Year">
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-primary" id="applyYearRange">Apply Range</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Cars by Year (Filtered)</h5>
+                        </div>
+                        <canvas id="filteredYearChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Average Price by Year (Filtered)</h5>
+                        </div>
+                        <canvas id="filteredPriceYearChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Average Mileage by Year</h5>
+                        </div>
+                        <canvas id="mileageYearChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5>Fuel Type Changes Over Time</h5>
+                        </div>
+                        <canvas id="fuelTimeChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Car Explorer Section -->
+    <section id="car-explorer" class="car-explorer py-5">
+        <div class="container">
+            <h2 class="section-title">Explore the Cars</h2>
+            <p class="section-subtitle">Search, filter, and analyze individual car records</p>
+            
+            <div class="explorer-controls mb-4">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="searchCars" placeholder="Search by brand, model, fuel type, body type...">
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-select" id="sortCars">
+                            <option value="">Sort by...</option>
+                            <option value="price-asc">Price (Low to High)</option>
+                            <option value="price-desc">Price (High to Low)</option>
+                            <option value="year-asc">Year (Oldest First)</option>
+                            <option value="year-desc">Year (Newest First)</option>
+                            <option value="mileage-desc">Mileage (High to Low)</option>
+                            <option value="power-desc">Power (High to Low)</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-select" id="itemsPerPage">
+                            <option value="10">10 per page</option>
+                            <option value="25">25 per page</option>
+                            <option value="50">50 per page</option>
+                            <option value="100">100 per page</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-success w-100" id="downloadCSV">
+                            <i class="bi bi-download"></i> Download CSV
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="results-count">
+                            Showing <span id="showingCount">0</span> of <span id="totalCount">0</span> cars
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-hover" id="carsTable">
+                    <thead>
+                        <tr>
+                            <th>Brand</th>
+                            <th>Model</th>
+                            <th>Year</th>
+                            <th>Price (₹)</th>
+                            <th>Fuel</th>
+                            <th>Transmission</th>
+                            <th>Mileage</th>
+                            <th>Engine (CC)</th>
+                            <th>Power (BHP)</th>
+                            <th>Body Type</th>
+                        </tr>
+                    </thead>
+                    <tbody id="carsTableBody">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination-controls">
+                <nav>
+                    <ul class="pagination" id="pagination">
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data-Driven Insights Section -->
+    <section id="insights" class="insights-section py-5">
+        <div class="container">
+            <h2 class="section-title">AI-Style Insights</h2>
+            <p class="section-subtitle">Automated insights generated from the dataset</p>
+            
+            <div class="row g-4" id="insightsContent">
+            </div>
+        </div>
+    </section>
+
+    <!-- Top 10 Section -->
+    <section class="top-performers py-5">
+        <div class="container">
+            <h2 class="section-title">Top Performers</h2>
+            <p class="section-subtitle">Leading cars and brands in different categories</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="top-list-card">
+                        <div class="top-list-header">
+                            <h5><i class="bi bi-currency-dollar"></i> Top 10 Most Expensive Cars</h5>
+                        </div>
+                        <div class="top-list" id="topExpensive">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="top-list-card">
+                        <div class="top-list-header">
+                            <h5><i class="bi bi-lightning-charge"></i> Top 10 Most Powerful Cars</h5>
+                        </div>
+                        <div class="top-list" id="topPowerful">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="top-list-card">
+                        <div class="top-list-header">
+                            <h5><i class="bi bi-speedometer2"></i> Top 10 Most Fuel-Efficient Cars</h5>
+                        </div>
+                        <div class="top-list" id="topEfficient">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="top-list-card">
+                        <div class="top-list-header">
+                            <h5><i class="bi bi-buildings"></i> Top 10 Popular Brands</h5>
+                        </div>
+                        <div class="top-list" id="topBrands">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="top-list-card">
+                        <div class="top-list-header">
+                            <h5><i class="bi bi-calendar-check"></i> Top 10 Most Recent Cars</h5>
+                        </div>
+                        <div class="top-list" id="topRecent">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section py-5">
+        <div class="container">
+            <h2 class="section-title">About Project</h2>
+            <p class="section-subtitle">Understanding the data science behind automobile market analysis</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="about-card">
+                        <h4>CarTrend Analytics</h4>
+                        <p>A comprehensive data science project designed to analyze automobile market data using modern data visualization techniques. This project demonstrates how data cleaning, statistical analysis, and interactive visualization can transform raw automotive data into meaningful market insights.</p>
+                        
+                        <h5>Purpose</h5>
+                        <p>To analyze automobile market data using data science and visualization techniques, helping users understand market trends, brand performance, pricing patterns, and consumer preferences.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="about-card">
+                        <h5>Technologies Used</h5>
+                        <ul>
+                            <li><strong>HTML5</strong> - Structure and layout</li>
+                            <li><strong>CSS3</strong> - Styling and responsive design</li>
+                            <li><strong>JavaScript</strong> - Interactive functionality</li>
+                            <li><strong>Chart.js</strong> - Data visualization</li>
+                            <li><strong>Bootstrap 5</strong> - UI framework</li>
+                            <li><strong>CSV/JSON</strong> - Data format</li>
+                        </ul>
+
+                        <h5>Data Science Concepts</h5>
+                        <ul>
+                            <li>Data Cleaning and Processing</li>
+                            <li>Statistical Analysis</li>
+                            <li>Data Visualization</li>
+                            <li>Trend Analysis</li>
+                            <li>Correlation Analysis</li>
+                            <li>Comparative Analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-note mt-4">
+                <div class="alert alert-info">
+                    <i class="bi bi-info-circle"></i> This project was developed as a Data Science mini project to demonstrate practical applications of data analysis and visualization in understanding real-world market trends.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4>CarTrend Analytics</h4>
+                    <p>Turning automobile data into meaningful insights.</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="#home">Dashboard</a></li>
+                        <li><a href="#market-overview">Market Trends</a></li>
+                        <li><a href="#brand-analysis">Brand Analysis</a></li>
+                        <li><a href="#car-explorer">Car Explorer</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Contact</h5>
+                    <p>Data Science Mini Project</p>
+                    <p>College Academic Year 2025-2026</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CarTrend Analytics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/insights.js"></script>
+</body>
+</html>

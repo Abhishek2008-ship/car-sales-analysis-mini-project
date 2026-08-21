@@ -1,0 +1,186 @@
+Brand,Model,Year,Price,Fuel_Type,Transmission,Mileage,Engine_CC,Power_BHP,Torque_Nm,Body_Type,Seats,Drive_Type,Owner_Type
+Tata,Nexon,2023,1200000,Petrol,Manual,18.5,1199,120,170,SUV,5,FWD,First
+Tata,Harrier,2023,2100000,Diesel,Automatic,15.2,1956,170,350,SUV,7,FWD,First
+Tata,Safari,2022,2600000,Diesel,Automatic,14.5,1956,170,350,SUV,7,FWD,First
+Tata,Altroz,2023,850000,Petrol,Manual,19.5,1199,86,115,Hatchback,5,FWD,First
+Tata,Punch,2023,650000,Petrol,Manual,18.8,1199,86,115,SUV,5,FWD,First
+Mahindra,XUV700,2023,2800000,Diesel,Automatic,14.0,2198,185,420,SUV,7,AWD,First
+Mahindra,Scorpio,2022,2100000,Diesel,Manual,15.5,2184,130,400,SUV,7,RWD,First
+Mahindra,Thar,2023,1600000,Diesel,Manual,15.2,2184,130,300,SUV,4,4WD,First
+Mahindra,XUV300,2022,1200000,Petrol,Manual,17.5,1197,110,200,SUV,5,FWD,First
+Maruti Suzuki,Swift,2023,750000,Petrol,Manual,21.5,1197,83,113,Hatchback,5,FWD,First
+Maruti Suzuki,Baleno,2023,950000,Petrol,Manual,21.0,1197,89,115,Hatchback,5,FWD,First
+Maruti Suzuki,Dzire,2022,900000,Petrol,Manual,22.0,1197,89,113,Sedan,5,FWD,First
+Maruti Suzuki,Brezza,2023,1150000,Petrol,Manual,17.5,1462,103,138,SUV,5,FWD,First
+Maruti Suzuki,Grand Vitara,2023,1500000,Hybrid,Automatic,25.0,1460,91,122,SUV,5,FWD,First
+Toyota,Innova Crysta,2022,2800000,Diesel,Automatic,11.5,2755,174,360,MPV,7,RWD,First
+Toyota,Fortuner,2023,3800000,Diesel,Automatic,10.0,2755,204,500,SUV,7,4WD,First
+Toyota,Corolla,2022,2200000,Petrol,Automatic,14.5,1798,138,173,Sedan,5,FWD,First
+Toyota,Glanza,2023,1000000,Petrol,Manual,19.5,1197,83,113,Hatchback,5,FWD,First
+Toyota,Urban Cruiser,2022,1400000,Petrol,Manual,17.5,1462,103,138,SUV,5,FWD,First
+Honda,City,2023,1500000,Petrol,Manual,17.8,1498,121,145,Sedan,5,FWD,First
+Honda,Amaze,2022,850000,Petrol,Manual,18.6,1199,90,110,Sedan,5,FWD,First
+Honda,HR-V,2023,2200000,Petrol,Automatic,16.5,1498,174,220,SUV,5,FWD,First
+Honda,Civic,2022,2600000,Petrol,Automatic,15.0,1498,173,220,Sedan,5,FWD,First
+Nissan,Magnite,2023,750000,Petrol,Manual,18.5,999,72,96,SUV,5,FWD,First
+Nissan,Kicks,2022,1600000,Petrol,Manual,15.0,1498,130,200,SUV,5,FWD,First
+Nissan,Sunny,2021,1200000,Petrol,Manual,17.0,1498,106,140,Sedan,5,FWD,First
+BMW,3 Series,2023,5500000,Petrol,Automatic,14.5,1998,255,400,Sedan,5,RWD,First
+BMW,5 Series,2022,7500000,Diesel,Automatic,13.0,2993,265,620,Sedan,5,AWD,First
+BMW,X3,2023,6800000,Diesel,Automatic,12.5,2993,265,620,SUV,5,AWD,First
+BMW,X5,2022,9500000,Petrol,Automatic,10.0,2998,340,650,SUV,7,AWD,First
+BMW,7 Series,2023,12000000,Petrol,Automatic,9.5,2998,382,520,Sedan,5,AWD,First
+Mercedes-Benz,C-Class,2023,5800000,Petrol,Automatic,14.0,1497,201,320,Sedan,5,RWD,First
+Mercedes-Benz,E-Class,2022,8500000,Diesel,Automatic,12.5,1950,285,600,Sedan,5,AWD,First
+Mercedes-Benz,GLC,2023,7200000,Diesel,Automatic,12.0,1950,285,600,SUV,5,AWD,First
+Mercedes-Benz,GLE,2022,10500000,Petrol,Automatic,10.5,2999,367,500,SUV,7,AWD,First
+Mercedes-Benz,S-Class,2023,16000000,Petrol,Automatic,9.0,2999,429,520,Sedan,5,AWD,First
+Audi,A4,2023,5200000,Petrol,Automatic,14.5,1984,188,320,Sedan,5,AWD,First
+Audi,A6,2022,7200000,Diesel,Automatic,13.0,2967,286,620,Sedan,5,AWD,First
+Audi,Q3,2023,4800000,Petrol,Automatic,15.0,1395,150,250,SUV,5,AWD,First
+Audi,Q5,2022,6500000,Diesel,Automatic,12.5,2967,286,620,SUV,5,AWD,First
+Audi,Q7,2023,9800000,Petrol,Automatic,11.0,2995,340,700,SUV,7,AWD,First
+Volkswagen,Polo,2023,900000,Petrol,Manual,18.5,999,110,175,Hatchback,5,FWD,First
+Volkswagen,Vento,2022,1200000,Petrol,Manual,17.5,1498,110,175,Sedan,5,FWD,First
+Volkswagen,Tiguan,2023,3500000,Petrol,Automatic,14.0,1498,150,250,SUV,5,AWD,First
+Volkswagen,Passat,2022,4000000,Diesel,Automatic,15.5,1968,177,400,Sedan,5,AWD,First
+Ford,Ecosport,2022,1100000,Petrol,Manual,15.5,1496,123,150,SUV,5,FWD,First
+Ford,Endeavour,2023,3500000,Diesel,Automatic,12.0,1996,170,420,SUV,7,4WD,First
+Ford,Mustang,2022,7500000,Petrol,Manual,9.0,4951,456,529,Coupe,4,RWD,First
+Ford,Figo,2021,850000,Petrol,Manual,18.0,1496,95,120,Hatchback,5,FWD,First
+Hyundai,i20,2023,850000,Petrol,Manual,20.0,1197,88,115,Hatchback,5,FWD,First
+Hyundai,Verna,2022,1400000,Petrol,Manual,17.5,1497,120,172,Sedan,5,FWD,First
+Hyundai,Creta,2023,1600000,Petrol,Manual,17.0,1497,115,144,SUV,5,FWD,First
+Hyundai,Tucson,2022,3500000,Diesel,Automatic,16.5,1997,185,400,SUV,5,AWD,First
+Hyundai, Venue,2023,1100000,Petrol,Manual,18.2,1197,120,172,SUV,5,FWD,First
+Kia,Seltos,2023,1400000,Petrol,Manual,16.8,1497,115,144,SUV,5,FWD,First
+Kia,Sonet,2022,1000000,Petrol,Manual,18.5,1197,120,172,SUV,5,FWD,First
+Kia,Carnival,2023,4000000,Diesel,Automatic,13.5,2199,200,400,MPV,7,FWD,First
+Kia, Seltos,2021,1500000,Diesel,Automatic,18.0,1493,115,250,SUV,5,FWD,First
+Volvo,XC40,2023,4800000,Petrol,Automatic,14.5,1969,250,350,SUV,5,AWD,First
+Volvo,XC60,2022,6800000,Diesel,Automatic,13.0,1969,235,480,SUV,5,AWD,First
+Volvo,S90,2023,7500000,Diesel,Automatic,15.0,1969,235,480,Sedan,5,AWD,First
+Jaguar,F-PACE,2023,9500000,Diesel,Automatic,12.5,1999,300,650,SUV,5,AWD,First
+Jaguar,XF,2022,7200000,Diesel,Automatic,13.0,1999,204,430,Sedan,5,RWD,First
+Jaguar,I-PACE,2023,13000000,Electric,Automatic,0.0,0,400,696,SUV,5,AWD,First
+Land Rover,Discovery,2023,12000000,Diesel,Automatic,10.0,2998,300,650,SUV,7,AWD,First
+Land Rover,Range Rover,2022,20000000,Petrol,Automatic,9.5,4395,523,750,SUV,5,AWD,First
+Land Rover,Defender,2023,9500000,Diesel,Automatic,11.0,2998,300,650,SUV,7,AWD,First
+Jeep,Wrangler,2023,6500000,Petrol,Manual,9.5,1998,268,400,SUV,4,4WD,First
+Jeep,Compass,2022,2200000,Diesel,Automatic,16.0,1956,170,350,SUV,5,4WD,First
+Jeep,Meridian,2023,3500000,Diesel,Automatic,14.5,1956,170,350,SUV,7,4WD,First
+Tesla,Model 3,2023,5500000,Electric,Automatic,0.0,0,283,450,Sedan,5,RWD,First
+Tesla,Model Y,2022,6500000,Electric,Automatic,0.0,0,384,600,SUV,5,AWD,First
+Tesla,Model S,2023,9000000,Electric,Automatic,0.0,0,670,950,Sedan,5,AWD,First
+Tesla,Model X,2022,11000000,Electric,Automatic,0.0,0,670,1020,SUV,7,AWD,First
+Renault,Kiger,2023,750000,Petrol,Manual,18.5,999,72,96,SUV,5,FWD,First
+Renault,Duster,2022,1400000,Diesel,Manual,17.0,1498,85,200,SUV,5,FWD,First
+Renault,Triber,2021,650000,Petrol,Manual,19.0,999,72,96,MPV,7,FWD,First
+Skoda,Slavia,2023,1400000,Petrol,Manual,18.5,1498,115,178,Sedan,5,FWD,First
+Skoda,Kushaq,2022,1600000,Petrol,Manual,17.5,1498,115,178,SUV,5,FWD,First
+Skoda,Octavia,2023,2800000,Petrol,Automatic,15.0,1984,188,250,Sedan,5,FWD,First
+Skoda,Superb,2022,3500000,Diesel,Automatic,18.0,1968,190,400,Sedan,5,AWD,First
+Porsche,Macan,2023,9500000,Petrol,Automatic,11.5,1984,265,540,SUV,5,AWD,First
+Porsche,Cayenne,2022,14000000,Petrol,Automatic,10.5,2894,340,500,SUV,5,AWD,First
+Porsche,911,2023,18000000,Petrol,Manual,9.0,2981,450,530,Coupe,2,RWD,First
+Porsche,Taycan,2022,15000000,Electric,Automatic,0.0,0,408,650,Sedan,4,AWD,First
+Mini,Cooper,2023,4200000,Petrol,Automatic,16.5,1499,189,280,Hatchback,4,FWD,First
+Mini,Countryman,2022,5500000,Petrol,Automatic,14.0,1998,178,280,SUV,5,AWD,First
+Fiat,Punto,2021,650000,Petrol,Manual,18.0,1248,75,115,Hatchback,5,FWD,First
+Fiat,Linea,2020,800000,Diesel,Manual,19.5,1248,90,210,Sedan,5,FWD,First
+Honda,City,2021,1300000,Petrol,Manual,18.0,1498,119,145,Sedan,5,FWD,Second
+Maruti Suzuki,Swift,2021,650000,Petrol,Manual,22.0,1197,82,113,Hatchback,5,FWD,Second
+Hyundai,i20,2021,750000,Petrol,Manual,21.0,1197,88,115,Hatchback,5,FWD,Second
+Tata,Nexon,2021,1000000,Petrol,Manual,19.0,1199,120,170,SUV,5,FWD,Second
+Honda,Amaze,2020,750000,Petrol,Manual,19.5,1199,90,110,Sedan,5,FWD,Second
+Toyota,Innova,2020,2400000,Diesel,Manual,12.0,2755,150,360,MPV,7,RWD,Second
+Mahindra,Scorpio,2020,1800000,Diesel,Manual,16.0,2184,120,400,SUV,7,RWD,Second
+Ford,Ecosport,2020,950000,Petrol,Manual,16.0,1496,123,150,SUV,5,FWD,Second
+Volkswagen,Vento,2020,1100000,Petrol,Manual,18.0,1498,110,175,Sedan,5,FWD,Second
+BMW,3 Series,2020,4800000,Diesel,Automatic,18.0,1995,190,400,Sedan,5,RWD,Second
+Mercedes-Benz,C-Class,2020,5000000,Petrol,Automatic,15.0,1497,184,300,Sedan,5,RWD,Second
+Audi,A4,2020,4500000,Diesel,Automatic,17.5,1968,190,400,Sedan,5,AWD,Second
+Volvo,S60,2021,5200000,Diesel,Automatic,16.0,1969,190,400,Sedan,5,FWD,Second
+Jeep,Compass,2020,1800000,Diesel,Manual,17.0,1956,160,350,SUV,5,4WD,Second
+Kia,Seltos,2020,1200000,Petrol,Manual,17.5,1497,115,144,SUV,5,FWD,Second
+Skoda,Rapid,2020,1200000,Petrol,Manual,16.5,1498,110,175,Sedan,5,FWD,Second
+Renault,Duster,2019,1200000,Diesel,Manual,18.0,1498,85,200,SUV,5,FWD,Second
+Nissan,Kicks,2019,1400000,Petrol,Manual,16.0,1498,130,200,SUV,5,FWD,Second
+Toyota,Fortuner,2019,3400000,Diesel,Manual,11.0,2755,200,500,SUV,7,4WD,Second
+Land Rover,Discovery Sport,2019,6500000,Diesel,Automatic,14.0,1999,180,430,SUV,7,AWD,Second
+Jaguar,XE,2019,4800000,Diesel,Automatic,16.5,1999,180,430,Sedan,5,RWD,Second
+Porsche,Macan,2019,8500000,Petrol,Automatic,13.0,1984,252,420,SUV,5,AWD,Second
+Mini,Cooper,2019,3800000,Petrol,Automatic,17.5,1499,189,280,Hatchback,4,FWD,Second
+Tata,Harrier,2020,1900000,Diesel,Manual,16.0,1956,170,350,SUV,7,FWD,Second
+Mahindra,XUV500,2019,2200000,Diesel,Automatic,15.0,2179,140,330,SUV,7,AWD,Second
+Maruti Suzuki,Vitara Brezza,2019,1050000,Diesel,Manual,18.0,1248,90,200,SUV,5,FWD,Second
+Honda,WR-V,2019,950000,Petrol,Manual,17.5,1498,115,150,SUV,5,FWD,Second
+Ford,Figo,2019,750000,Petrol,Manual,19.0,1496,95,120,Hatchback,5,FWD,Second
+Hyundai,Elite i20,2019,700000,Petrol,Manual,20.0,1197,83,115,Hatchback,5,FWD,Second
+Volkswagen,Polo,2019,800000,Petrol,Manual,19.0,999,110,175,Hatchback,5,FWD,Second
+Chevrolet,Bolt EV,2022,4500000,Electric,Automatic,0.0,0,200,360,Hatchback,5,FWD,First
+Chevrolet,Trailblazer,2021,2800000,Diesel,Automatic,14.0,1998,200,400,SUV,7,AWD,First
+Chevrolet,Camaro,2023,5500000,Petrol,Manual,10.0,6162,455,617,Coupe,4,RWD,First
+Chevrolet,Corvette,2022,8500000,Petrol,Manual,11.0,6162,495,630,Coupe,2,RWD,First
+Dodge,Challenger,2023,7000000,Petrol,Manual,9.0,6417,717,885,Coupe,4,RWD,First
+Dodge,Charger,2022,6500000,Petrol,Automatic,10.0,6417,717,885,Sedan,4,RWD,First
+Cadillac,Escalade,2023,12000000,Petrol,Automatic,8.5,6162,420,627,SUV,7,AWD,First
+Cadillac,CT5,2022,5500000,Petrol,Automatic,12.0,1998,340,550,Sedan,5,RWD,First
+Lincoln,Navigator,2023,11000000,Petrol,Automatic,10.0,3796,450,691,SUV,7,AWD,First
+GMC,Yukon,2022,9500000,Petrol,Automatic,9.0,6162,420,627,SUV,7,AWD,First
+GMC,Canyon,2021,4000000,Diesel,Manual,11.0,2776,200,500,Pickup,4,4WD,First
+Subaru,Outback,2023,3800000,Petrol,Automatic,14.0,2498,182,239,Wagon,5,AWD,First
+Subaru,Forester,2022,3500000,Petrol,Automatic,15.5,2498,182,239,SUV,5,AWD,First
+Subaru,Impreza,2021,2200000,Petrol,Manual,18.0,1995,152,197,Sedan,5,AWD,First
+Mazda,CX-5,2023,3200000,Petrol,Automatic,16.0,2488,187,231,SUV,5,AWD,First
+Mazda,3,2022,2800000,Petrol,Manual,18.5,1998,186,230,Sedan,5,FWD,First
+Mazda,CX-9,2021,4500000,Petrol,Automatic,13.0,2488,227,280,SUV,7,AWD,First
+Mitsubishi,Pajero,2022,3500000,Diesel,Manual,12.0,2847,190,441,SUV,7,4WD,First
+Mitsubishi,Outlander,2021,3000000,Petrol,Automatic,14.5,1998,165,222,SUV,5,AWD,First
+Mitsubishi,Montero,2020,4500000,Diesel,Automatic,11.0,3200,200,520,SUV,7,4WD,First
+Lexus,ES,2023,6800000,Petrol,Automatic,16.5,2487,207,243,Sedan,5,FWD,First
+Lexus,RX,2022,8500000,Petrol,Automatic,14.0,3456,308,435,SUV,5,AWD,First
+Lexus,NX,2021,6500000,Petrol,Automatic,17.0,2487,203,240,SUV,5,AWD,First
+Infiniti,Q50,2022,5500000,Petrol,Automatic,13.5,2997,300,400,Sedan,5,RWD,First
+Infiniti,QX60,2021,7000000,Petrol,Automatic,12.0,2993,295,367,SUV,7,AWD,First
+Acura,TLX,2023,4800000,Petrol,Automatic,14.0,1996,272,380,Sedan,5,AWD,First
+Acura,RDX,2022,5200000,Petrol,Automatic,15.5,1996,272,380,SUV,5,AWD,First
+Acura,MDX,2021,6500000,Petrol,Automatic,13.0,3471,290,355,SUV,7,AWD,First
+Suzuki,Vitara,2022,1800000,Petrol,Manual,17.0,1462,103,138,SUV,5,AWD,First
+Suzuki,Jimny,2023,1600000,Petrol,Manual,16.5,1462,102,130,SUV,4,4WD,First
+Suzuki,Swift,2021,800000,Petrol,Manual,21.0,1197,82,113,Hatchback,5,FWD,First
+Isuzu,D-Max,2022,3500000,Diesel,Manual,12.0,1898,150,400,Pickup,4,4WD,First
+Isuzu,MU-X,2021,3800000,Diesel,Automatic,12.5,1898,150,450,SUV,7,4WD,First
+Genesis,G80,2023,7500000,Petrol,Automatic,13.0,2995,300,420,Sedan,5,AWD,First
+Genesis,GV70,2022,6500000,Petrol,Automatic,14.5,2995,300,420,SUV,5,AWD,First
+Genesis,G90,2021,12000000,Petrol,Automatic,12.0,5968,420,569,Sedan,5,AWD,First
+SsangYong,Rexton,2022,3200000,Diesel,Automatic,13.0,1997,181,420,SUV,7,4WD,First
+SsangYong,Korando,2021,2500000,Diesel,Manual,14.5,1497,136,320,SUV,5,FWD,First
+Peugeot,3008,2023,3800000,Diesel,Automatic,18.0,1997,130,300,SUV,5,FWD,First
+Peugeot,5008,2022,4200000,Diesel,Automatic,17.5,1997,130,300,MPV,7,FWD,First
+Citroën,C5 Aircross,2021,3500000,Diesel,Manual,16.0,1997,130,300,SUV,5,FWD,First
+Ferrari,Roma,2023,38000000,Petrol,Automatic,8.5,3855,612,760,Coupe,2,RWD,First
+Ferrari,812,2022,55000000,Petrol,Automatic,7.5,6496,789,730,Coupe,2,RWD,First
+Lamborghini,Huracan,2023,45000000,Petrol,Automatic,10.0,5204,631,600,Coupe,2,AWD,First
+Lamborghini,Urus,2022,50000000,Petrol,Automatic,12.0,4161,641,850,SUV,5,AWD,First
+Maserati,Ghibli,2023,12000000,Petrol,Automatic,10.0,2979,350,500,Sedan,5,RWD,First
+Maserati,Levante,2022,15000000,Petrol,Automatic,11.0,2979,350,580,SUV,5,AWD,First
+Bentley,Flying Spur,2023,40000000,Petrol,Automatic,9.0,5950,626,900,Sedan,5,AWD,First
+Bentley,Bentayga,2022,45000000,Petrol,Automatic,8.5,3996,542,770,SUV,5,AWD,First
+Rolls-Royce,Phantom,2023,80000000,Petrol,Automatic,9.5,6749,563,900,Sedan,5,RWD,First
+Rolls-Royce,Cullinan,2022,90000000,Petrol,Automatic,10.0,6749,563,850,SUV,5,AWD,First
+Aston Martin,DB11,2023,35000000,Petrol,Automatic,9.0,5204,630,700,Coupe,2,RWD,First
+Aston Martin,Vantage,2022,25000000,Petrol,Automatic,10.0,3982,503,685,Coupe,2,RWD,First
+Opel,Insignia,2021,2800000,Diesel,Automatic,17.0,1998,170,400,Sedan,5,FWD,First
+Opel,Grandland,2020,2500000,Petrol,Manual,16.5,1499,130,230,SUV,5,FWD,First
+Tesla,Cybertruck,2024,8000000,Electric,Automatic,0.0,0,800,1000,Pickup,6,AWD,First
+Tesla,Roadster,2024,20000000,Electric,Automatic,0.0,0,1000,1000,Coupe,2,AWD,First
+Tata,Nexon EV,2023,1800000,Electric,Automatic,0.0,0,143,215,SUV,5,FWD,First
+Tata,Tiago EV,2022,1200000,Electric,Automatic,0.0,0,86,114,Hatchback,5,FWD,First
+MG,Hector,2023,1800000,Diesel,Manual,15.0,1956,170,350,SUV,7,FWD,First
+MG,ZS EV,2022,2500000,Electric,Automatic,0.0,0,143,280,SUV,5,FWD,First
+MG,Gloster,2021,3800000,Diesel,Automatic,13.0,1997,218,480,SUV,7,4WD,First
+BYD,Atto 3,2023,3500000,Electric,Automatic,0.0,0,204,310,SUV,5,FWD,First
+BYD,e6,2022,3000000,Electric,Automatic,0.0,0,136,180,MPV,7,FWD,First
+Force Motors,Gurkha,2023,1800000,Diesel,Manual,14.0,2149,140,320,SUV,4,4WD,First
+Force Motors,Thar,2022,1500000,Diesel,Manual,15.0,2184,130,300,SUV,4,4WD,First
