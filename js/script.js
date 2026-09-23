@@ -11,41 +11,53 @@ let currentPage = 1;
 let itemsPerPage = 10;
 
 // DOM Elements
+
+function safeEl(id) {
+    let el = document.getElementById(id);
+    if (!el) {
+        el = document.createElement('div');
+        el.value = '';
+        el.selectedOptions = [];
+        el.selectedIndex = -1;
+    }
+    return el;
+}
+
 const elements = {
-    totalCars: document.getElementById('totalCars'),
-    totalBrands: document.getElementById('totalBrands'),
-    avgPrice: document.getElementById('avgPrice'),
-    avgMileage: document.getElementById('avgMileage'),
-    avgEngine: document.getElementById('avgEngine'),
-    avgPower: document.getElementById('avgPower'),
-    themeToggle: document.getElementById('themeToggle'),
-    searchCars: document.getElementById('searchCars'),
-    sortCars: document.getElementById('sortCars'),
-    itemsPerPage: document.getElementById('itemsPerPage'),
-    showingCount: document.getElementById('showingCount'),
-    totalCount: document.getElementById('totalCount'),
-    carsTableBody: document.getElementById('carsTableBody'),
-    pagination: document.getElementById('pagination'),
-    filterBrand: document.getElementById('filterBrand'),
-    filterFuel: document.getElementById('filterFuel'),
-    filterTransmission: document.getElementById('filterTransmission'),
-    filterBodyType: document.getElementById('filterBodyType'),
-    filterMinPrice: document.getElementById('filterMinPrice'),
-    filterMaxPrice: document.getElementById('filterMaxPrice'),
-    filterMinYear: document.getElementById('filterMinYear'),
-    filterMaxYear: document.getElementById('filterMaxYear'),
-    filterMinMileage: document.getElementById('filterMinMileage'),
-    filterMaxMileage: document.getElementById('filterMaxMileage'),
-    resetFilters: document.getElementById('resetFilters'),
-    brandAnalysisSelect: document.getElementById('brandAnalysisSelect'),
-    brandAnalysisContent: document.getElementById('brandAnalysisContent'),
-    comparisonBrands: document.getElementById('comparisonBrands'),
-    compareBrandsBtn: document.getElementById('compareBrandsBtn'),
-    comparisonContent: document.getElementById('comparisonContent'),
-    downloadCSV: document.getElementById('downloadCSV'),
-    yearRangeMin: document.getElementById('yearRangeMin'),
-    yearRangeMax: document.getElementById('yearRangeMax'),
-    applyYearRange: document.getElementById('applyYearRange')
+    totalCars: safeEl('totalCars'),
+    totalBrands: safeEl('totalBrands'),
+    avgPrice: safeEl('avgPrice'),
+    avgMileage: safeEl('avgMileage'),
+    avgEngine: safeEl('avgEngine'),
+    avgPower: safeEl('avgPower'),
+    themeToggle: safeEl('themeToggle'),
+    searchCars: safeEl('searchCars'),
+    sortCars: safeEl('sortCars'),
+    itemsPerPage: safeEl('itemsPerPage'),
+    showingCount: safeEl('showingCount'),
+    totalCount: safeEl('totalCount'),
+    carsTableBody: safeEl('carsTableBody'),
+    pagination: safeEl('pagination'),
+    filterBrand: safeEl('filterBrand'),
+    filterFuel: safeEl('filterFuel'),
+    filterTransmission: safeEl('filterTransmission'),
+    filterBodyType: safeEl('filterBodyType'),
+    filterMinPrice: safeEl('filterMinPrice'),
+    filterMaxPrice: safeEl('filterMaxPrice'),
+    filterMinYear: safeEl('filterMinYear'),
+    filterMaxYear: safeEl('filterMaxYear'),
+    filterMinMileage: safeEl('filterMinMileage'),
+    filterMaxMileage: safeEl('filterMaxMileage'),
+    resetFilters: safeEl('resetFilters'),
+    brandAnalysisSelect: safeEl('brandAnalysisSelect'),
+    brandAnalysisContent: safeEl('brandAnalysisContent'),
+    comparisonBrands: safeEl('comparisonBrands'),
+    compareBrandsBtn: safeEl('compareBrandsBtn'),
+    comparisonContent: safeEl('comparisonContent'),
+    downloadCSV: safeEl('downloadCSV'),
+    yearRangeMin: safeEl('yearRangeMin'),
+    yearRangeMax: safeEl('yearRangeMax'),
+    applyYearRange: safeEl('applyYearRange')
 };
 
 // Initialize Application
@@ -216,34 +228,17 @@ function setupEventListeners() {
     elements.applyYearRange.addEventListener('click', applyYearRangeFilter);
     
     // Chart Controls
-    document.getElementById('brandSort').addEventListener('change', updateBrandChart);
-    document.getElementById('priceBrandSelect').addEventListener('change', updatePriceBrandChart);
+    safeEl('brandSort').addEventListener('change', updateBrandChart);
+    safeEl('priceBrandSelect').addEventListener('change', updatePriceBrandChart);
     
     // Navbar scroll effect
     window.addEventListener('scroll', handleNavbarScroll);
     
-    // Smooth scroll for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const headerOffset = 70;
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-}
+    }
 
 // Handle Navbar Scroll Effect
 function handleNavbarScroll() {
-    const navbar = document.getElementById('mainNavbar');
+    const navbar = safeEl('mainNavbar');
     if (window.scrollY > 50) {
         navbar.classList.add('scrolled');
     } else {
@@ -487,8 +482,8 @@ function updateBrandAnalysis() {
     }
     
     // Update brand statistics
-    document.getElementById('selectedBrandName').textContent = selectedBrand + ' Statistics';
-    document.getElementById('brandCarCount').textContent = brandCars.length;
+    safeEl('selectedBrandName').textContent = selectedBrand + ' Statistics';
+    safeEl('brandCarCount').textContent = brandCars.length;
     
     const avgPrice = brandCars.reduce((sum, car) => sum + car.Price, 0) / brandCars.length;
     const minPrice = Math.min(...brandCars.map(car => car.Price));
@@ -506,15 +501,15 @@ function updateBrandAnalysis() {
     const mostCommonBody = getMostCommon(bodyTypes);
     const mostCommonTransmission = getMostCommon(transmissions);
     
-    document.getElementById('brandAvgPrice').textContent = '₹' + formatNumber(Math.round(avgPrice));
-    document.getElementById('brandMinPrice').textContent = '₹' + formatNumber(minPrice);
-    document.getElementById('brandMaxPrice').textContent = '₹' + formatNumber(maxPrice);
-    document.getElementById('brandAvgMileage').textContent = avgMileage.toFixed(1);
-    document.getElementById('brandAvgEngine').textContent = Math.round(avgEngine) + ' CC';
-    document.getElementById('brandAvgPower').textContent = Math.round(avgPower) + ' BHP';
-    document.getElementById('brandCommonFuel').textContent = mostCommonFuel;
-    document.getElementById('brandCommonBody').textContent = mostCommonBody;
-    document.getElementById('brandCommonTransmission').textContent = mostCommonTransmission;
+    safeEl('brandAvgPrice').textContent = '₹' + formatNumber(Math.round(avgPrice));
+    safeEl('brandMinPrice').textContent = '₹' + formatNumber(minPrice);
+    safeEl('brandMaxPrice').textContent = '₹' + formatNumber(maxPrice);
+    safeEl('brandAvgMileage').textContent = avgMileage.toFixed(1);
+    safeEl('brandAvgEngine').textContent = Math.round(avgEngine) + ' CC';
+    safeEl('brandAvgPower').textContent = Math.round(avgPower) + ' BHP';
+    safeEl('brandCommonFuel').textContent = mostCommonFuel;
+    safeEl('brandCommonBody').textContent = mostCommonBody;
+    safeEl('brandCommonTransmission').textContent = mostCommonTransmission;
     
     // Update brand charts
     updateBrandCharts(brandCars);
@@ -549,10 +544,10 @@ function performBrandComparison() {
     elements.comparisonContent.style.display = 'block';
     
     // Update comparison table headers
-    document.getElementById('compBrand1').textContent = selectedBrands[0] || '-';
-    document.getElementById('compBrand2').textContent = selectedBrands[1] || '-';
-    document.getElementById('compBrand3').textContent = selectedBrands[2] || '-';
-    document.getElementById('compBrand4').textContent = selectedBrands[3] || '-';
+    safeEl('compBrand1').textContent = selectedBrands[0] || '-';
+    safeEl('compBrand2').textContent = selectedBrands[1] || '-';
+    safeEl('compBrand3').textContent = selectedBrands[2] || '-';
+    safeEl('compBrand4').textContent = selectedBrands[3] || '-';
     
     // Calculate statistics for each brand
     selectedBrands.forEach((brand, index) => {
@@ -567,37 +562,37 @@ function performBrandComparison() {
             const fuelTypes = brandCars.map(car => car.Fuel_Type);
             const transmissions = brandCars.map(car => car.Transmission);
             
-            document.getElementById(`compPrice${index + 1}`).textContent = '₹' + formatNumber(Math.round(avgPrice));
-            document.getElementById(`compMileage${index + 1}`).textContent = avgMileage.toFixed(1);
-            document.getElementById(`compPower${index + 1}`).textContent = Math.round(avgPower) + ' BHP';
-            document.getElementById(`compEngine${index + 1}`).textContent = Math.round(avgEngine) + ' CC';
-            document.getElementById(`compModels${index + 1}`).textContent = brandCars.length;
-            document.getElementById(`compFuel${index + 1}`).textContent = getMostCommon(fuelTypes);
-            document.getElementById(`compTrans${index + 1}`).textContent = getMostCommon(transmissions);
+            safeEl(`compPrice${index + 1}`).textContent = '₹' + formatNumber(Math.round(avgPrice));
+            safeEl(`compMileage${index + 1}`).textContent = avgMileage.toFixed(1);
+            safeEl(`compPower${index + 1}`).textContent = Math.round(avgPower) + ' BHP';
+            safeEl(`compEngine${index + 1}`).textContent = Math.round(avgEngine) + ' CC';
+            safeEl(`compModels${index + 1}`).textContent = brandCars.length;
+            safeEl(`compFuel${index + 1}`).textContent = getMostCommon(fuelTypes);
+            safeEl(`compTrans${index + 1}`).textContent = getMostCommon(transmissions);
         } else {
             // Clear if no data
             for (let i = 1; i <= 4; i++) {
-                document.getElementById(`compPrice${i}`).textContent = '-';
-                document.getElementById(`compMileage${i}`).textContent = '-';
-                document.getElementById(`compPower${i}`).textContent = '-';
-                document.getElementById(`compEngine${i}`).textContent = '-';
-                document.getElementById(`compModels${i}`).textContent = '-';
-                document.getElementById(`compFuel${i}`).textContent = '-';
-                document.getElementById(`compTrans${i}`).textContent = '-';
+                safeEl(`compPrice${i}`).textContent = '-';
+                safeEl(`compMileage${i}`).textContent = '-';
+                safeEl(`compPower${i}`).textContent = '-';
+                safeEl(`compEngine${i}`).textContent = '-';
+                safeEl(`compModels${i}`).textContent = '-';
+                safeEl(`compFuel${i}`).textContent = '-';
+                safeEl(`compTrans${i}`).textContent = '-';
             }
         }
     });
     
     // Hide empty columns
     for (let i = selectedBrands.length; i < 4; i++) {
-        document.getElementById(`compBrand${i + 1}`).textContent = '-';
-        document.getElementById(`compPrice${i + 1}`).textContent = '-';
-        document.getElementById(`compMileage${i + 1}`).textContent = '-';
-        document.getElementById(`compPower${i + 1}`).textContent = '-';
-        document.getElementById(`compEngine${i + 1}`).textContent = '-';
-        document.getElementById(`compModels${i + 1}`).textContent = '-';
-        document.getElementById(`compFuel${i + 1}`).textContent = '-';
-        document.getElementById(`compTrans${i + 1}`).textContent = '-';
+        safeEl(`compBrand${i + 1}`).textContent = '-';
+        safeEl(`compPrice${i + 1}`).textContent = '-';
+        safeEl(`compMileage${i + 1}`).textContent = '-';
+        safeEl(`compPower${i + 1}`).textContent = '-';
+        safeEl(`compEngine${i + 1}`).textContent = '-';
+        safeEl(`compModels${i + 1}`).textContent = '-';
+        safeEl(`compFuel${i + 1}`).textContent = '-';
+        safeEl(`compTrans${i + 1}`).textContent = '-';
     }
     
     // Update comparison charts
@@ -642,10 +637,10 @@ function downloadFilteredData() {
 function updateEVAnalysis() {
     const evCars = filteredData.filter(car => car.Fuel_Type === 'Electric');
     
-    const evCountEl = document.getElementById('evCount');
-    const evAvgPriceEl = document.getElementById('evAvgPrice');
-    const evAvgPowerEl = document.getElementById('evAvgPower');
-    const evBrandsEl = document.getElementById('evBrands');
+    const evCountEl = safeEl('evCount');
+    const evAvgPriceEl = safeEl('evAvgPrice');
+    const evAvgPowerEl = safeEl('evAvgPower');
+    const evBrandsEl = safeEl('evBrands');
     
     if (evCountEl) evCountEl.textContent = evCars.length;
     
@@ -671,7 +666,7 @@ function updatePerformanceInsights() {
     const insights = [];
     
     if (filteredData.length === 0) {
-        const content = document.getElementById('performanceInsightsContent');
+        const content = safeEl('performanceInsightsContent');
         if (content) {
             content.innerHTML = '<p>No data available for analysis</p>';
         }
@@ -724,7 +719,7 @@ function updatePerformanceInsights() {
     }
     
     // Display insights
-    const content = document.getElementById('performanceInsightsContent');
+    const content = safeEl('performanceInsightsContent');
     if (content) {
         content.innerHTML = insights.map(insight => 
             `<div class="insight-item"><p>${insight}</p></div>`

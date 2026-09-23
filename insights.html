@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarTrend Analytics - Explore. Compare. Understand the Automobile Market.</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="dashboard.html">
+                <i class="bi bi-car-front-fill"></i> CarTrend Analytics
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="market-trends.html">Market Trends</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="brand-analysis.html">Brand Analysis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="car-explorer.html">Car Explorer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="insights.html">Insights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn ms-2" id="themeToggle">
+                            <i class="bi bi-sun"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Data-Driven Insights Section -->
+    <section id="insights" class="insights-section py-5">
+        <div class="container">
+            <h2 class="section-title">AI-Style Insights</h2>
+            <p class="section-subtitle">Automated insights generated from the dataset</p>
+            
+            <div class="row g-4" id="insightsContent">
+            </div>
+        </div>
+    </section>
+<!-- Top 10 Section -->
+    <section class="top-performers py-5">
+        <div class="container">
+            <h2 class="section-title">Top Performers</h2>
+            <p class="section-subtitle">Leading cars and brands in different categories</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="top-list-card">
+                        <div class="top-list-header">
+                            <h5><i class="bi bi-currency-dollar"></i> Top 10 Most Expensive Cars</h5>
+                        </div>
+                        <div class="top-list" id="topExpensive">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="top-list-card">
+                        <div class="top-list-header">
+                            <h5><i class="bi bi-lightning-charge"></i> Top 10 Most Powerful Cars</h5>
+                        </div>
+                        <div class="top-list" id="topPowerful">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="top-list-card">
+                        <div class="top-list-header">
+                            <h5><i class="bi bi-speedometer2"></i> Top 10 Most Fuel-Efficient Cars</h5>
+                        </div>
+                        <div class="top-list" id="topEfficient">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="top-list-card">
+                        <div class="top-list-header">
+                            <h5><i class="bi bi-buildings"></i> Top 10 Popular Brands</h5>
+                        </div>
+                        <div class="top-list" id="topBrands">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="top-list-card">
+                        <div class="top-list-header">
+                            <h5><i class="bi bi-calendar-check"></i> Top 10 Most Recent Cars</h5>
+                        </div>
+                        <div class="top-list" id="topRecent">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4>CarTrend Analytics</h4>
+                    <p>Turning automobile data into meaningful insights.</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="market-trends.html">Market Trends</a></li>
+                        <li><a href="brand-analysis.html">Brand Analysis</a></li>
+                        <li><a href="car-explorer.html">Car Explorer</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Contact</h5>
+                    <p>Data Science Mini Project</p>
+                    <p>College Academic Year 2025-2026</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CarTrend Analytics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/insights.js"></script>
+</body>
+</html>
